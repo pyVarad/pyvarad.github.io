@@ -5,10 +5,9 @@
 // IMPORTS
 //
 
-@use "reset";
-@use "variables" as vars; // Use an alias for variables
-@use "highlights";
-@use "svg-icons";
+@import "reset";
+@import "variables"; // Use an alias for variables
+
 
 // Syntax highlighting @import is at the bottom of this file
 
@@ -21,20 +20,20 @@ html {
 }
 
 body {
-  // font: 18px/1.4 vars.$helvetica;
-  background-color: vars.$background-color; // Apply dark background
-  color: vars.$text-color; 
+  font: 18px/1.4 $helvetica;
+  background-color: $background-color; // Apply dark background
+  color: $text-color; 
   height: 100%;
   margin: 0;
 }
 
 a {
-  color: vars.$link-color;                 // Style links with accent color
+  color: $link-color;                 // Style links with accent color
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: lighten(vars.$link-color, 10%);   // Slightly lighter on hover
+  color: lighten($link-color, 10%);   // Slightly lighter on hover
 }
 
 #main {
@@ -42,9 +41,9 @@ a:hover, a:focus {
 }
 
 header.masthead {
-  background-color: vars.$background-color;
-  color: vars.$header-color;
-  border-bottom: 1px solid vars.$border-color;
+  background-color: $background-color;
+  color: $header-color;
+  border-bottom: 1px solid $border-color;
 }
 
 .wrapper {
@@ -54,9 +53,9 @@ header.masthead {
 }
 
 .wrapper-footer {
-  background-color: vars.$background-color;
-  color: vars.$text-color;
-  border-top: 1px solid vars.$border-color;
+  background-color: $background-color;
+  color: $text-color;
+  border-top: 1px solid $border-color;
 }
 
 .container {
@@ -64,18 +63,18 @@ header.masthead {
   max-width: 740px;
   padding: 0 10px;
   width: 100%;
-  border-color: vars.$border-color;
+  border-color: $border-color;
 }
 
 code, pre {
-  background-color: darken(vars.$background-color, 10%);
-  color: vars.$text-color;
-  border: 1px solid vars.$border-color;
+  background-color: darken($background-color, 10%);
+  color: $text-color;
+  border: 1px solid $border-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: vars.$helveticaNeue;
-  color: vars.$darkerGray;
+  font-family: $helveticaNeue;
+  color: $darkerGray;
   font-weight: bold;
 
   line-height: 1.7;
@@ -83,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 
   // font-family: 'Winky Rough', sans-serif;
-  color: vars.$header-color;  // Apply the font to all headings
+  color: $header-color;  // Apply the font to all headings
 
   @mixin mobile {
     line-height: 1.4;
@@ -107,7 +106,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  color: vars.$gray;
+  color: $gray;
 }
 
 p {
@@ -115,11 +114,11 @@ p {
 }
 
 a {
-  color: lighten(vars.$link-color, 10%);
+  color: lighten($link-color, 10%);
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: vars.$link-color;
+    color: $link-color;
   }
 }
 
@@ -163,18 +162,18 @@ img {
 
 .date {
   font-style: italic;
-  color: lighten(vars.$link-color, 10%);
+  color: lighten($link-color, 10%);
 
 }
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: vars.$black;
-  background: vars.$lightGray;
+  color: $black;
+  background: $lightGray;
 }
 ::selection {
-  color: vars.$black;
-  background: vars.$lightGray;
+  color: $black;
+  background: $lightGray;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -203,7 +202,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid vars.$lightGray;
+  border-bottom: 1px solid $lightGray;
 
   @mixin mobile {
     text-align: center;
@@ -239,11 +238,11 @@ img {
 
 .site-name {
   margin: 0;
-  color: vars.$darkGray;
+  color: $darkGray;
   cursor: pointer;
-  // font-family: vars.$helveticaNeue;
+  // font-family: $helveticaNeue;
   font-family: 'Winky Rough', sans-serif;
-  color: vars.$header-color; // Apply the font to all headings
+  color: $header-color; // Apply the font to all headings
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -251,7 +250,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: lighten(vars.$link-color, 10%);
+  color: lighten($link-color, 10%);
   font-size: 16px;
 
   @mixin mobile {
@@ -263,7 +262,7 @@ nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: 'Winky Rough', sans-serif;
-  color: vars.$text-color;
+  color: $text-color;
   font-size: 18px;
 
   @mixin mobile {
@@ -275,26 +274,26 @@ nav {
 
   a {
     margin-left: 20px;
-    color: vars.$darkGray;
-    color: vars.$text-color;
+    color: $darkGray;
+    color: $text-color;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
     :hover {
-      color: vars.$link-color;
+      color: $link-color;
     }
 
     :active {
-      color: vars.$link-color;
+      color: $link-color;
     }
     :focus {
-      color: vars.$link-color;
+      color: $link-color;
     }
 
     @mixin mobile {
       margin: 0 10px;
-      color: vars.$link-color;
+      color: $link-color;
     }
   }
 }
@@ -305,7 +304,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid vars.$lightGray;
+  border-bottom: 1px solid $lightGray;
 }
 
 .posts > .post:last-child {
@@ -316,9 +315,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid vars.$gray;
+    border-left: 2px solid $gray;
     padding: 0.1em 1em;
-    color: vars.$gray;
+    color: $gray;
     font-size: 22px;
     font-style: italic;
   }
@@ -335,9 +334,9 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  background-color: vars.$background-color;
-  color: vars.$text-color;
-  border-top: 1px solid vars.$border-color;
+  background-color: $background-color;
+  color: $text-color;
+  border-top: 1px solid $border-color;
 }
 
 footer {
@@ -354,3 +353,5 @@ footer {
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "highlights";
+@import "svg-icons";
