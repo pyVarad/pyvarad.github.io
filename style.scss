@@ -21,9 +21,43 @@ html {
 }
 
 body {
-	background: vars.$white;
+  font-family: "Winky Rough", sans-serif;
   font: 18px/1.4 vars.$helvetica;
-  color: vars.$darkGray;
+  background-color: vars.$background-color; // Apply dark background
+  color: vars.$text-color; 
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  color: vars.$link-color;                 // Style links with accent color
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: lighten(vars.$link-color, 10%);   // Slightly lighter on hover
+}
+
+#main {
+  flex: 1; // Allow the main content to grow and take up available space
+}
+
+header.masthead {
+  background-color: vars.$background-color;
+  color: vars.$header-color;
+  border-bottom: 1px solid vars.$border-color;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Make the wrapper take the full height of the viewport
+}
+
+.wrapper-footer {
+  background-color: vars.$background-color;
+  color: vars.$text-color;
+  border-top: 1px solid vars.$border-color;
 }
 
 .container {
@@ -31,6 +65,13 @@ body {
   max-width: 740px;
   padding: 0 10px;
   width: 100%;
+  border-color: vars.$border-color;
+}
+
+code, pre {
+  background-color: darken(vars.$background-color, 10%);
+  color: vars.$text-color;
+  border: 1px solid vars.$border-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,6 +82,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
+
+  // font-family: 'Winky Rough', sans-serif;
+  color: vars.$header-color;  // Apply the font to all headings
 
   @mixin mobile {
     line-height: 1.4;
@@ -72,11 +116,11 @@ p {
 }
 
 a {
-  color: vars.$blue;
+  color: lighten(vars.$link-color, 10%);
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
-    color: vars.$blue;
+    color: vars.$link-color;
   }
 }
 
@@ -120,7 +164,8 @@ img {
 
 .date {
   font-style: italic;
-  color: vars.$gray;
+  color: lighten(vars.$link-color, 10%);
+
 }
 
 // Specify the color of the selection
@@ -197,7 +242,9 @@ img {
   margin: 0;
   color: vars.$darkGray;
   cursor: pointer;
-  font-family: vars.$helveticaNeue;
+  // font-family: vars.$helveticaNeue;
+  font-family: 'Winky Rough', sans-serif;
+  color: vars.$header-color; // Apply the font to all headings
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -205,7 +252,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: vars.$gray;
+  color: lighten(vars.$link-color, 10%);
   font-size: 16px;
 
   @mixin mobile {
@@ -216,7 +263,8 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: vars.$helveticaNeue;
+  font-family: 'Winky Rough', sans-serif;
+  color: vars.$text-color;
   font-size: 18px;
 
   @mixin mobile {
@@ -229,13 +277,25 @@ nav {
   a {
     margin-left: 20px;
     color: vars.$darkGray;
+    color: vars.$text-color;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
+    :hover {
+      color: vars.$link-color;
+    }
+
+    :active {
+      color: vars.$link-color;
+    }
+    :focus {
+      color: vars.$link-color;
+    }
+
     @mixin mobile {
       margin: 0 10px;
-      color: vars.$blue;
+      color: vars.$link-color;
     }
   }
 }
@@ -276,14 +336,21 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: vars.$lightGray;
+  background-color: vars.$background-color;
+  color: vars.$text-color;
+  border-top: 1px solid vars.$border-color;
 }
 
 footer {
   padding: 20px 0;
   text-align: center;
+}
+
+.site-avatar img {
+  border-radius: 50%; // Makes the image round
+  width: 70px; // Optional: Ensure consistent size
+  height: 70px; // Optional: Ensure consistent size
+  object-fit: cover; // Ensures the image is cropped properly if not square
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
