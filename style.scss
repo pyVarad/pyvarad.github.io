@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  font: 18px/1.4 vars.$helvetica;
+  font: 18px/1.4 (vars.$helvetica); 
   background-color: vars.$background-color; // Apply dark background
   color: vars.$text-color; 
   height: 100%;
