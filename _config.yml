@@ -1,0 +1,30 @@
+title: Varad's Blog
+description: Personal blog by Varad
+
+url: https://long-haul.netlify.app
+baseurl:
+paginate_path: "blog/page:num/"
+permalink: blog/:title/
+
+sass:
+    style: compressed
+
+markdown: kramdown
+highlighter: rouge
+plugins: [jekyll-paginate]
+paginate: 5
+
+navigation:
+    - title: Home
+      url: /index.html
+    - title: About
+      url: /about
+
+social:
+    github: pyVarad
+    email: pyVarad@gmail.com
+
+google_analytics: "UA-58263416-1"
+
+disqus:
+    shortname: pyVarad
