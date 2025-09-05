@@ -36,4 +36,4 @@ defaults:
       comments: true
 
 disqus:
-  shortname: pyvarad
+  shortname: pyvarad-github-io
