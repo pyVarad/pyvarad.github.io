@@ -26,5 +26,14 @@ social:
 
 google_analytics: "UA-58263416-1"
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+
 disqus:
-    shortname: pyVarad
+  shortname: pyvarad
